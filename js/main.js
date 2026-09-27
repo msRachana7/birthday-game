@@ -111,7 +111,7 @@ function startBackgroundMusic() {
     introState.musicAudio = document.createElement('audio');
     introState.musicAudio.loop = true;
     introState.musicAudio.preload = 'auto';
-    introState.musicAudio.volume =0.05;
+    introState.musicAudio.volume =0.03;
 
     const m4aSource = document.createElement('source');
     m4aSource.src = './Game.m4a';
