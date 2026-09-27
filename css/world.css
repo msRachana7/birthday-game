@@ -1,0 +1,265 @@
+.world{position:absolute;inset:0;background:linear-gradient(var(--sky) 0 28%,var(--grass1) 28% 100%);overflow:hidden}
+.horizon{position:absolute;left:0;right:0;top:28%;height:6px;background:var(--grass2)}
+.path{
+  position:absolute;left:44%;top:29%;width:12%;height:71%;
+  background:var(--path);clip-path:polygon(42% 0,58% 0,88% 100%,12% 100%);opacity:.95;
+}
+
+.tree{position:absolute;width:120px;height:160px;top:22%;z-index:2}
+.inner-tree{top:15%;transform:scale(.7)}
+.tree .trunk{position:absolute;left:50px;bottom:0;width:24px;height:72px;background:var(--wood);border:4px solid var(--brown)}
+.tree .crown{
+  position:absolute;left:9px;top:0;width:100px;height:95px;background:var(--pink);
+  border:5px solid var(--pink2);border-radius:45% 55% 46% 54%;
+  box-shadow:-25px 18px 0 -8px var(--pink2), 28px 15px 0 -10px #f7d4df, 10px -18px 0 -10px #f4b9c9;
+}
+
+.petal{position:absolute;width:8px;height:6px;background:var(--pink2);border:1px solid var(--pink);animation:fall linear infinite;z-index:3}
+@keyframes fall{from{transform:translateY(-30px) rotate(0)}to{transform:translateY(700px) rotate(280deg)}}
+
+.cottage{position:absolute;width:240px;height:180px;top:38%;transition:opacity 1.5s ease, transform 1.5s ease, filter 1.5s ease;}
+.store{left:5%}.earn{right:5%}
+.roof{
+  position:absolute;left:-10px;top:-45px;width:260px;height:80px;background:var(--wood);
+  border:6px solid var(--brown);clip-path:polygon(50% 0,100% 65%,92% 100%,8% 100%,0 65%);
+  background-image:repeating-linear-gradient(0deg,transparent 0 20px,var(--wood2) 20px 25px);
+}
+.house{
+  position:absolute;inset:20px 0 0;background:var(--panel);border:6px solid var(--wood);
+  box-shadow:inset 0 0 0 8px #dfc9a6;
+}
+.door{position:absolute;width:58px;height:92px;left:91px;bottom:0;background:var(--wood);border:5px solid var(--brown);box-shadow:inset 0 0 0 5px var(--wood2)}
+.window{
+  position:absolute;width:52px;height:46px;top:52px;background:var(--sky);border:5px solid var(--wood);
+  box-shadow:inset 22px 0 0 -18px var(--panel), inset 0 -20px 0 -17px var(--panel);
+}
+.window.w1{left:25px}.window.w2{right:25px}
+.sign{
+  position:absolute;left:50%;transform:translateX(-50%);top:30px;
+  background:var(--cream);border:4px solid var(--wood);padding:6px 12px;font-weight:bold;white-space:nowrap;
+}
+
+.flowers{position:absolute;inset:0;pointer-events:none}
+.flower{position:absolute;width:8px;height:8px;background:var(--cream);border:2px solid var(--pink);box-shadow:7px 0 0 var(--cream),-7px 0 0 var(--cream),0 7px 0 var(--cream),0 -7px 0 var(--cream)}
+
+.path-stone{position:absolute;width:18px;height:8px;background:#c1aa83;border:2px solid #a48b68;transform:rotate(-8deg);opacity:.8;z-index:1}
+.stone-one{left:48%;top:55%}.stone-two{left:53%;top:77%;transform:rotate(9deg)}
+.cloud{position:absolute;width:76px;height:18px;background:rgba(243,232,213,.72);border-radius:12px;z-index:1}
+.cloud::before,.cloud::after{content:'';position:absolute;background:inherit;border-radius:50%}
+.cloud::before{width:28px;height:28px;left:12px;top:-12px}.cloud::after{width:34px;height:34px;right:10px;top:-16px}
+.cloud-one{left:13%;top:11%;transform:scale(.8)}.cloud-two{right:14%;top:15%;transform:scale(.65)}
+
+.cottage.ending-hidden, .cottage.disappearing{
+  opacity:0; transform:scale(.84) translateY(10px); pointer-events:none; filter:blur(2px);
+}
+
+.transition-spark{
+  position:absolute; width:12px; height:12px; border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,.95) 0 28%, rgba(247,190,212,.9) 28% 62%, rgba(239,170,185,.7) 62% 100%);
+  box-shadow:0 0 18px rgba(246,164,188,.6); pointer-events:none; z-index:14; opacity:0;
+  animation:sparkleFade ease-out forwards;
+}
+@keyframes sparkleFade{
+  0%{opacity:0;transform:translate(0,0) scale(.3)}
+  18%{opacity:1} 100%{opacity:0;transform:translate(var(--spark-x), var(--spark-y)) scale(1.2)}
+}
+
+/* Wooden birthday doorway */
+#game .birthday-door {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 140px;
+  height: 180px;
+  z-index: 12;
+
+  display: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.82);
+
+  cursor: pointer;
+  overflow: visible;
+  isolation: isolate;
+
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
+}
+
+#game .birthday-door.door-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: none;
+}
+
+/* Light spilling onto the path */
+#game .birthday-door::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 12%;
+  top: 80%;
+  width: 76%;
+  height: 130px;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    #ffd47dcc,
+    #ffdb8866 45%,
+    #ffde8900
+  );
+
+  clip-path: polygon(27% 0, 73% 0, 100% 100%, 0 100%);
+}
+
+/* Stone doorstep */
+#game .birthday-door::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  left: 9px;
+  right: 9px;
+  bottom: 0;
+  height: 16px;
+
+  border: 3px solid #65472f;
+  background: #cba273;
+
+  box-shadow:
+    inset 0 4px 0 #efd0a0,
+    0 4px 0 #806044;
+}
+
+/* Wooden arch and glowing opening */
+#game .birthday-door .door-panel {
+  position: absolute;
+  inset: 18px 10px 12px;
+  overflow: visible;
+
+  border: 9px solid #795133;
+  border-bottom-width: 5px;
+  border-radius: 48px 48px 0 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      #fffbe0 0%,
+      #ffeab0 48%,
+      #ffc56b 100%
+    );
+
+  box-shadow:
+    0 0 0 3px #493524,
+    inset 0 0 0 3px #bc8d58,
+    inset 0 0 18px #ffad44,
+    0 0 24px #ffe1a166;
+}
+
+/* Open pink wooden door */
+#game .birthday-door .door-panel::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+
+  inset: auto;
+  right: 0;
+  top: 5px;
+  bottom: 0;
+  width: 47%;
+
+  border: 3px solid #634132;
+  border-radius: 22px 10px 0 0;
+
+  background: repeating-linear-gradient(
+    90deg,
+    #a35e60 0 6px,
+    #c17d79 6px 12px,
+    #8b5152 12px 15px
+  );
+
+  transform-origin: right center;
+  transform: skewY(12deg);
+
+  box-shadow: inset 3px 0 0 #df9b8e;
+}
+
+/* Cake sign above the arch */
+#game .birthday-door .door-panel::after {
+  content: "🎂";
+  position: absolute;
+  z-index: 5;
+
+  left: 50%;
+  top: -29px;
+  width: 43px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  transform: translateX(-50%);
+  border: 3px solid #65452f;
+  border-radius: 0;
+  background: #ffe6b6;
+
+  font-size: 23px;
+  line-height: 1;
+
+  box-shadow:
+    inset 0 0 0 3px #d5ab79,
+    2px 2px 0 #493524;
+}
+
+/* Replace the old heart decoration with the cake sign */
+#game .birthday-door .door-heart {
+  display: none;
+}
+
+#game .birthday-door .door-knob {
+  position: absolute;
+  z-index: 3;
+  right: 34px;
+  top: 59%;
+
+  width: 7px;
+  height: 10px;
+
+  border: 2px solid #895b28;
+  border-radius: 2px;
+  background: #f8cd69;
+
+  transform: none;
+  box-shadow: 1px 1px 0 #513824;
+}
+
+.player{
+  position:absolute;width:54px;height:82px;left:50%;top:70%;transform:translate(-50%,-100%);z-index:10;
+  transition:transform .05s linear;
+}
+.player-sprite{position:absolute;left:50%;bottom:0;width:74px;height:82px;transform:translateX(-50%);object-fit:contain;object-position:center bottom;image-rendering:pixelated;display:block}
+.shadow{position:absolute;left:9px;bottom:-2px;width:36px;height:10px;background:rgba(40,52,40,.25);border-radius:50%;z-index:-1}
+
+/* Keep cherry blossom trees behind cottages */
+#game .world > .tree {
+  z-index: 2;
+}
+
+#game .world > .cottage {
+  z-index: 4;
+}
+
+/* Keep the character above both */
+#game .world > .player {
+  z-index: 10;
+}
+
+/* Decorative canvases must not intercept clicks */
+#game .scenery-landscape,
+#game .scenery-tree,
+#game .scenery-cottage {
+  pointer-events: none;
+}
+#game .world.scenery-upgraded .cottage > .sign {
+  visibility: hidden !important;
+}

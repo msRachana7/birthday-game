@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Birthday Quest Mock</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/world.css" />
+  <link rel="stylesheet" href="./css/ui.css" />
+  <link rel="stylesheet" href="./css/minigames.css" />
+</head>
+<body>
+  <div class="frame" id="game">
+    <div class="title-screen" id="titleScreen">
+  <div class="start-scenery" aria-hidden="true">
+    <span class="start-cloud cloud-left"></span>
+    <span class="start-cloud cloud-right"></span>
+
+    <span class="start-flower flower-one"></span>
+    <span class="start-flower flower-two"></span>
+    <span class="start-flower flower-three"></span>
+    <span class="start-flower flower-four"></span>
+    <span class="start-flower flower-five"></span>
+
+    <span class="start-petal petal-one"></span>
+    <span class="start-petal petal-two"></span>
+    <span class="start-petal petal-three"></span>
+    <span class="start-petal petal-four"></span>
+    <span class="start-petal petal-five"></span>
+  </div>
+
+  <div class="title-card">
+    <div class="start-icons" aria-hidden="true">
+      <span>🌸</span>
+      <span class="start-gift">🎁</span>
+      <span>🌸</span>
+    </div>
+
+    <h1>Birthday Quest</h1>
+    <p class="start-subtitle">
+      A little adventure, made just for you.
+    </p>
+
+    <button id="startBtn" type="button">
+      Begin Adventure
+    </button>
+
+    <p class="start-controls">WASD / Arrow keys to move</p>
+  </div>
+</div>
+
+    <div id="startWhiteOverlay" class="start-white-overlay"></div>
+
+    <div class="world">
+      <div class="horizon"></div>
+      <div class="path"></div>
+
+      <div class="tree" style="left:2%;top:22%"><div class="crown"></div><div class="trunk"></div></div>
+      <div class="tree inner-tree" style="left:27%"><div class="crown"></div><div class="trunk"></div></div>
+      <div class="tree inner-tree" style="right:27%"><div class="crown"></div><div class="trunk"></div></div>
+      <div class="tree" style="right:1%;top:22%"><div class="crown"></div><div class="trunk"></div></div>
+
+      <div class="cottage store">
+        <div class="roof"></div><div class="house"></div>
+        <div class="window w1"></div><div class="window w2"></div><div class="door"></div>
+        <div class="sign">GIFT STORE</div>
+      </div>
+
+      <div class="cottage earn">
+        <div class="roof"></div><div class="house"></div>
+        <div class="window w1"></div><div class="window w2"></div><div class="door"></div>
+        <div class="sign">EARN MONEY</div>
+      </div>
+
+      <div class="flowers">
+        <div class="flower" style="left:20%;top:70%"></div><div class="flower" style="left:28%;top:82%"></div>
+        <div class="flower" style="left:72%;top:73%"></div><div class="flower" style="left:82%;top:84%"></div>
+        <div class="flower" style="left:35%;top:58%"></div><div class="flower" style="left:63%;top:58%"></div>
+      </div>
+
+      <div class="path-stone stone-one"></div><div class="path-stone stone-two"></div>
+      <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+
+      <div class="player" id="player">
+        <div class="shadow"></div><img id="playerSprite" class="player-sprite" src="./north.png" alt="Player" />
+      </div>
+
+      <div class="hud">
+        <div class="pill">🌸 Birthday Quest</div>
+        <div class="pill">🪙 <span id="coins">0</span></div>
+        <button id="musicToggleBtn" class="music-toggle" type="button" aria-label="Mute background music" aria-pressed="true" title="Mute background music">🔊</button>
+      </div>
+
+      <div class="status" id="giftStatus" aria-live="polite" aria-label="Gift shopping status"></div>
+      <div class="prompt" id="prompt">Press E</div>
+      <button id="birthdayButton" class="birthday-button" type="button">Go wish my bf happy birthday</button>
+    </div>
+
+    <div class="modal" id="earnModal">
+      <div class="panel">
+        <button class="close" data-close-target="earnModal">X</button>
+        <h2>
+            <span class="challenge-coin" aria-hidden="true"></span>
+            Little Challenges
+        </h2>
+        <div class="games-grid" id="gamesGrid"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="miniModal">
+      <div class="panel">
+        <button class="close" data-close-target="miniModal">X</button>
+        <div id="miniContent"></div>
+      </div>
+    </div>
+
+    <div id="rachanaIntroOverlay" class="rachana-intro-overlay hidden">
+      <div class="rachana-intro-panel">
+        <div class="rachana-portrait-wrap">
+          <div id="rachanaPortrait" class="rachana-portrait worried" aria-label="Rachana portrait"></div>
+        </div>
+        <div class="rachana-copy">
+          <div class="rachana-name">Rachana</div>
+          <div class="speech-bubble-wrap">
+            <div class="speech-bubble" id="rachanaDialogueBubble"></div>
+            <button id="introYesBtn" class="intro-yes hidden" type="button">Yes!</button>
+            <button id="introOkayBtn" class="intro-okay hidden" type="button">Okay lets go</button>
+          </div>
+          <div class="intro-controls-row">
+            <button id="introMuteBtn" class="intro-mute" type="button">Sound: on</button>
+            <button id="introSkipBtn" class="intro-skip" type="button">Skip</button>
+          </div>
+        </div>
+      </div>
+      <div id="introPrompt" class="intro-prompt">Press any key to continue</div>
+      <button id="introTouchContinue" class="intro-touch-continue" type="button">Tap to continue</button>
+    </div>
+
+    <div class="ending" id="ending">
+      <div class="ending-card">
+        <div style="font-size:42px">🌸 🎉 🫂 🎉 🌸</div>
+        <h1 style="color:#b65c78">HAPPY BIRTHDAY!</h1>
+        <p>You got all the gifts.</p>
+        <div style="font-size:46px">🎂</div>
+        <p style="margin-top:20px">One more thing…</p>
+        <button id="endingCardBtn">OPEN CARD 💌</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+<script type="module" src="./js/scenery-upgrade.js"></script>
+</body>
+</html>

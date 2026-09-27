@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Edited cottage picnic scene">
+  <rect width="480" height="300" fill="#dff2ff"/>
+  <path d="M0 176 C55 166, 125 145, 210 167 S372 180, 480 170 L480 300 L0 300 Z" fill="#bfe49d"/>
+  <path d="M0 202 L480 202 L480 300 L0 300 Z" fill="#a4d789"/>
+  <circle cx="74" cy="48" r="25" fill="#fff4b9"/>
+  <g transform="translate(70 96)">
+    <rect x="0" y="98" width="170" height="54" rx="10" fill="#dcc3a3"/>
+    <rect x="42" y="64" width="68" height="86" rx="8" fill="#f4dec4" stroke="#5e4635" stroke-width="4"/>
+    <path d="M26 70 L78 20 L132 70 Z" fill="#b97156" stroke="#5e4635" stroke-width="4"/>
+    <rect x="56" y="86" width="16" height="26" fill="#dfeeff" stroke="#5e4635" stroke-width="4"/>
+    <rect x="84" y="86" width="16" height="26" fill="#dfeeff" stroke="#5e4635" stroke-width="4"/>
+    <rect x="78" y="116" width="18" height="42" fill="#7a4b36" stroke="#5e4635" stroke-width="4"/>
+  </g>
+  <g transform="translate(250 112)">
+    <path d="M0 90 C30 52, 80 64, 110 86 L110 125 L0 125 Z" fill="#f6dfe4" stroke="#5e4635" stroke-width="4"/>
+    <rect x="35" y="60" width="32" height="22" rx="10" fill="#f5d7a0" stroke="#5e4635" stroke-width="4"/>
+    <circle cx="60" cy="40" r="18" fill="#f8d8d5"/>
+    <circle cx="24" cy="44" r="18" fill="#f8d8d5"/>
+  </g>
+  <g transform="translate(285 180)">
+    <rect x="0" y="0" width="110" height="45" rx="10" fill="#f7dfe0" stroke="#5e4635" stroke-width="3"/>
+    <rect x="20" y="-18" width="14" height="28" fill="#7f5a52"/>
+    <rect x="82" y="-18" width="14" height="28" fill="#7f5a52"/>
+    <circle cx="18" cy="-30" r="10" fill="#f9d9b5"/>
+    <circle cx="36" cy="-30" r="10" fill="#f9d9b5"/>
+  </g>
+  <g transform="translate(170 200)">
+    <circle cx="0" cy="0" r="12" fill="#f9cfd8"/>
+    <circle cx="20" cy="-10" r="12" fill="#f9cfd8"/>
+    <circle cx="40" cy="0" r="12" fill="#f9cfd8"/>
+    <circle cx="60" cy="-10" r="12" fill="#f9cfd8"/>
+  </g>
+  <g transform="translate(370 195)">
+    <path d="M0 20 L16 4 L30 20" fill="none" stroke="#8b6d7a" stroke-width="3"/>
+    <path d="M16 4 L16 26" stroke="#8b6d7a" stroke-width="3"/>
+  </g>
+  <g transform="translate(290 150)">
+    <rect x="0" y="0" width="80" height="20" rx="8" fill="#f7dfe0" stroke="#5e4635" stroke-width="3"/>
+    <circle cx="24" cy="-12" r="8" fill="#f8d9bb"/>
+    <circle cx="48" cy="-12" r="8" fill="#f8d9bb"/>
+  </g>
+</svg>

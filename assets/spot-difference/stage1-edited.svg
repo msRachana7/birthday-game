@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-label="Edited spring picnic scene">
+  <defs>
+    <linearGradient id="sky2" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#dff2ff"/>
+      <stop offset="100%" stop-color="#cfe8b4"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="300" fill="url(#sky2)"/>
+  <circle cx="78" cy="45" r="26" fill="#fff4ac" opacity="0.9"/>
+  <path d="M0 185 C110 155, 180 192, 265 172 S420 152, 480 172 L480 300 L0 300 Z" fill="#b7e29b"/>
+  <path d="M0 215 L480 215 L480 300 L0 300 Z" fill="#a3d57d"/>
+  <path d="M160 220 L350 220 L335 300 L175 300 Z" fill="#d8b38a"/>
+  <ellipse cx="256" cy="220" rx="110" ry="38" fill="#e5d2a4"/>
+  <rect x="94" y="105" width="118" height="74" rx="6" fill="#f7dcc4" stroke="#5c4537" stroke-width="4"/>
+  <path d="M86 108 L160 52 L232 108 Z" fill="#b8755a" stroke="#5c4537" stroke-width="4"/>
+  <rect x="118" y="148" width="26" height="30" fill="#dfeeff" stroke="#5c4537" stroke-width="4"/>
+  <rect x="170" y="148" width="26" height="30" fill="#dfeeff" stroke="#5c4537" stroke-width="4"/>
+  <rect x="150" y="170" width="22" height="40" fill="#7e4f35" stroke="#5c4537" stroke-width="4"/>
+  <circle cx="325" cy="92" r="30" fill="#f4d9de" stroke="#8c6974" stroke-width="4"/>
+  <circle cx="355" cy="82" r="22" fill="#fef8db" stroke="#8c6974" stroke-width="4"/>
+  <circle cx="292" cy="82" r="22" fill="#fef8db" stroke="#8c6974" stroke-width="4"/>
+  <circle cx="315" cy="58" r="24" fill="#fff1bd" stroke="#8c6974" stroke-width="4"/>
+  <circle cx="346" cy="58" r="24" fill="#fff1bd" stroke="#8c6974" stroke-width="4"/>
+  <g transform="translate(208 138)">
+    <rect x="0" y="18" width="54" height="12" rx="6" fill="#a7d08c"/>
+    <rect x="20" y="0" width="14" height="40" fill="#7d5a3c"/>
+    <ellipse cx="14" cy="4" rx="12" ry="8" fill="#f6d9db"/>
+    <ellipse cx="40" cy="4" rx="12" ry="8" fill="#f6d9db"/>
+    <ellipse cx="26" cy="14" rx="8" ry="6" fill="#f6d9db"/>
+  </g>
+  <g transform="translate(245 180)">
+    <rect x="0" y="10" width="42" height="20" rx="8" fill="#f7d7d7" stroke="#5c4537" stroke-width="3"/>
+    <path d="M10 10 Q21 0 32 10" fill="none" stroke="#5c4537" stroke-width="3"/>
+    <path d="M12 30 L18 70" stroke="#7d5a3c" stroke-width="4"/>
+    <path d="M30 30 L24 70" stroke="#7d5a3c" stroke-width="4"/>
+  </g>
+  <g transform="translate(370 188)">
+    <ellipse cx="18" cy="16" rx="18" ry="12" fill="#dce9f7" stroke="#5c4537" stroke-width="3"/>
+    <path d="M12 8 Q18 2 24 8" fill="none" stroke="#5c4537" stroke-width="3"/>
+    <path d="M11 16 L4 31" stroke="#5c4537" stroke-width="3"/>
+    <path d="M25 16 L32 31" stroke="#5c4537" stroke-width="3"/>
+  </g>
+  <g transform="translate(110 225)">
+    <circle cx="0" cy="0" r="7" fill="#f9ceda"/>
+    <circle cx="18" cy="-6" r="7" fill="#f9ceda"/>
+    <circle cx="34" cy="0" r="7" fill="#f9ceda"/>
+    <circle cx="8" cy="12" r="7" fill="#f9ceda"/>
+  </g>
+  <g transform="translate(70 235)">
+    <rect x="0" y="0" width="18" height="8" rx="4" fill="#d4f0f9"/>
+    <circle cx="4" cy="-7" r="5" fill="#f7d9b6"/>
+    <circle cx="13" cy="-7" r="5" fill="#f7d9b6"/>
+  </g>
+  <g transform="translate(104 190)">
+    <circle cx="0" cy="10" r="8" fill="#ffd5e4"/>
+    <circle cx="15" cy="3" r="8" fill="#ffd5e4"/>
+    <circle cx="30" cy="10" r="8" fill="#ffd5e4"/>
+  </g>
+</svg>
