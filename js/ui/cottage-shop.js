@@ -33,44 +33,48 @@
  * This module never writes to localStorage or owns a separate balance.
  */
 
+
 const SHOP_REMARKS = {
   coke: {
-    hover: "For the boyfriend who runs on fizz.",
+    hover: "For the friend who runs on fizz.",
     bought: "One fizzy little present, coming right up!"
   },
   gum: {
     hover: "A tiny gift. A fresh start.",
-    bought: "Fresh choice! He’s going to love it."
+    bought: "Fresh choice! She's going to love it."
   },
-  jersey: {
-    hover: "You might have to compete with Messi for his attention.",
-    bought: "GOOOAL! You’ve scored serious girlfriend points."
+  book: {
+    hover: "A little escape between two covers.",
+    bought: "A whole new world, just for her!"
   },
-  beer: {
-    hover: "A little birthday cheers!",
-    bought: "Cheers to the birthday boy! Lovely choice."
+  jewellery: {
+    hover: "A little sparkle for your favourite person.",
+    bought: "Shiny things for someone who shines brighter!"
   },
   chips: {
-    hover: "Sharing your chips? Now that’s commitment.",
+    hover: "Sharing your chips? Now that's commitment.",
     bought: "Crunchy, orange, perfect. Congratulations!"
   },
-  socks: {
-    hover: "With great socks comes great responsibility.",
-    bought: "His superhero era starts at his ankles."
+  top: {
+    hover: "A cute little outfit for a cute little human.",
+    bought: "She's about to enter her fashion icon era!"
   },
   tent: {
-    hover: "A portable house. Very serious relationship behaviour.",
-    bought: "Happy camping! You’ve gifted him an adventure."
+    hover: "A portable house. Very serious friend behaviour.",
+    bought: "Happy camping! You've gifted her an adventure."
   },
   licence: {
-    hover: "This relationship is taking flight.",
+    hover: "This friendship is taking flight.",
     bought: "Purchase cleared for takeoff!"
   },
-  ferrari: {
-    hover: "A small, humble birthday gift. Nothing dramatic.",
-    bought: "A FERRARI?! Girlfriend of the century!"
+  scooter: {
+    hover: "Two wheels, endless adventures.",
+    bought: "VROOM VROOM! Best birthday ride ever!"
   }
 };
+
+
+
 
 const SHOP_ART = {
   coke: `
@@ -79,40 +83,106 @@ const SHOP_ART = {
     <path stroke="#fff1d7" stroke-width="3" d="m25 34 13-8"/>
     <path stroke="#766553" stroke-width="2" d="M24 11h16M25 51h14"/>
   `,
+
   gum: `
     <path fill="#d197b2" d="M10 23h44v23H10z"/>
     <path fill="#fff0cb" d="M14 27h36v14H14z"/>
     <path stroke="#78a689" stroke-width="3"
       fill="none" d="m18 35 6-4 6 4 6-4 8 4"/>
   `,
-  jersey: `
-    <path fill="#a5d6df"
-      d="m20 10-13 9 7 12 7-4v28h23V27l7 4 6-12-13-9-12 5z"/>
-    <path stroke="#fff5dc" stroke-width="6"
-      d="M26 20v31m12-31v31"/>
-    <path fill="#66503e"
-      d="M29 27h3v13h-3zm6 0h6v13h-6z"/>
+
+  book: `
+    <path fill="#765b50" d="M5 15h25v39H5zM34 15h25v39H34z"/>
+    <path fill="#b9788f" d="M7 10h23v39H7z"/>
+    <path fill="#82a69b" d="M34 10h23v39H34z"/>
+    <path fill="#fff0d2" d="M11 14h19v36H11zM34 14h19v36H34z"/>
+    <path fill="#d5ba96" d="M30 14h4v38h-4z"/>
+    <path stroke="#bb9b8c" stroke-width="2"
+      d="M15 23h11M15 29h11M15 35h11M38 23h11M38 29h11M38 35h11"/>
+    <path fill="#d99bab" d="M43 10h5v13l-2-3-3 3z"/>
   `,
-  beer: `
-    <path fill="#d8ac58" d="M20 24h25v30H20z"/>
-    <path fill="none" stroke="#cda673" stroke-width="5"
-      d="M45 29h9v18h-9"/>
-    <path fill="#fff7df" d="M17 17h31v13H17z"/>
-    <path stroke="#fff0b2" stroke-width="3"
-      d="M26 34v14m9-14v14"/>
+
+  jewellery: `
+    <path fill="none" stroke="#d7a84e" stroke-width="3"
+      d="M16 12c1 16 8 27 16 30 8-3 15-14 16-30"/>
+    <path fill="none" stroke="#f4d681" stroke-width="2"
+      d="M20 15c2 12 6 19 12 22 6-3 10-10 12-22"/>
+    <circle cx="16" cy="12" r="5" fill="#efc76a" stroke="#8e6336" stroke-width="2"/>
+    <circle cx="48" cy="12" r="5" fill="#efc76a" stroke="#8e6336" stroke-width="2"/>
+    <path fill="#d76c88" stroke="#8e4d63" stroke-width="2"
+      d="m32 37 8 8-8 11-8-11z"/>
+    <path fill="#f7d98a" d="m32 41 3 4-3 4-3-4z"/>
+    <path fill="#b7d8d1" stroke="#527c79" stroke-width="2"
+      d="m12 25 5-5 5 5-5 5z"/>
+    <path fill="#b7d8d1" stroke="#527c79" stroke-width="2"
+      d="m42 25 5-5 5 5-5 5z"/>
   `,
+
   chips: `
     <path fill="#e5994e" d="m18 10 29 2-3 42H20z"/>
     <path fill="#fff1c5" d="M24 25h17v17H24z"/>
     <path stroke="#c36d3f" stroke-width="3"
       d="M22 15h20M24 48h15"/>
   `,
-  socks: `
-    <path fill="#ce6b73"
-      d="M12 9h15v28l-6 14H8V40l4-4zm28 0h15v28l-6 14H36V40l4-4z"/>
-    <path stroke="#465879" stroke-width="5"
-      d="M13 17h13m15 0h13M10 44h12m16 0h12"/>
-  `,
+
+  top:`
+  <!-- Shirt outline and short sleeves -->
+  <path fill="#75445e"
+    d="M22 12H28L32 15L36 12H42L53 19L59 28L49 35L44 31V54H20V31L15 35L5 28L11 19Z"/>
+
+  <!-- Main pink shirt -->
+  <path fill="#e7a0b8"
+    d="M22 15H28L32 20L36 15H42L51 21L55 28L49 32L42 27V51H22V27L15 32L9 28L13 21Z"/>
+
+  <!-- Short sleeve details -->
+  <path fill="#f5bfd0"
+    d="M13 22L21 18L23 25L16 31L10 27Z
+       M43 25L45 18L51 22L55 27L48 31Z"/>
+
+  <!-- Sleeve hems -->
+  <path fill="#fff0dd"
+    d="M10 27L16 31L19 29L13 24Z
+       M45 29L48 31L55 27L51 24Z"/>
+
+  <!-- Cream collar -->
+  <path fill="#fff0dd"
+    d="M23 13H28L32 20L36 13H41L40 20L32 27L24 20Z"/>
+
+  <!-- Collar shadows -->
+  <path fill="#a95f84"
+    d="M28 13L32 20L36 13L32 24Z"/>
+
+  <!-- Small pink bow -->
+  <path fill="#b66b90"
+    d="M30 25L25 22V29L30 27L32 29L34 27L39 29V22L34 25L32 24Z"/>
+
+  <!-- Bow center -->
+  <path fill="#fff0dd"
+    d="M30 25H34V28H30Z"/>
+
+  <!-- Soft fabric highlights -->
+  <path fill="#f8c5d5"
+    d="M24 30H27V49H24Z
+       M36 30H39V49H36Z"/>
+
+  <!-- Chest stripe -->
+  <path fill="#fbd5d6"
+    d="M23 32H41V35H23Z"/>
+
+  <!-- Cream star -->
+  <path fill="#fff2ce"
+    stroke="#a95f84"
+    stroke-width="2"
+    stroke-linejoin="miter"
+    d="M32 36L35 42L41 43L37 47L38 52L32 49L26 52L27 47L23 43L29 42Z"/>
+
+  <!-- Shirt hem -->
+  <path fill="#b86f92"
+    d="M20 51H44V54H20Z"/>
+  <path fill="#f6bbca"
+    d="M23 51H41V53H23Z"/>
+`,
+
   tent: `
     <path fill="#94aa7b" d="m32 10 26 43H6z"/>
     <path fill="#607b66" d="m32 10 7 43H6z"/>
@@ -120,6 +190,7 @@ const SHOP_ART = {
     <path stroke="#fff0cd" stroke-width="2"
       d="m32 10 26 43"/>
   `,
+
   licence: `
     <path fill="#fff0cd" d="M7 15h50v35H7z"/>
     <path fill="#d698ab" d="M12 22h12v16H12z"/>
@@ -128,16 +199,94 @@ const SHOP_ART = {
     <path fill="#c7a252"
       d="m44 36 3 3 4-1-1 4 2 3-5 1-3-3z"/>
   `,
-  ferrari: `
-    <path fill="#c75e64"
-      d="m6 34 9-3 8-13h22l8 15 7 3v13H5z"/>
-    <path fill="#badbda" d="m25 22-6 10h28l-5-10z"/>
-    <path fill="#463d3c"    
-      d="M12 42h11v12H12zm29 0h11v12H41z"/>
-    <path fill="#fff0cc"
-      d="M9 36h8v4H9zm43 0h5v4h-5z"/>
-  `
+
+  scooter: `
+     <!-- Rear wheel -->
+  <circle cx="16" cy="49" r="10" fill="#343039"/>
+  <circle cx="16" cy="49" r="7" fill="#636b75"/>
+  <circle cx="16" cy="49" r="4" fill="#a9c5c7"/>
+  <circle cx="16" cy="49" r="2" fill="#e0e8df"/>
+
+  <!-- Front wheel -->
+  <circle cx="51" cy="49" r="10" fill="#343039"/>
+  <circle cx="51" cy="49" r="7" fill="#636b75"/>
+  <circle cx="51" cy="49" r="4" fill="#a9c5c7"/>
+  <circle cx="51" cy="49" r="2" fill="#e0e8df"/>
+
+  <!-- Rear body silhouette -->
+  <path fill="#75445e"
+    d="M8 37L15 31H32L37 36V47H31V53H7V45Z"/>
+
+  <!-- Pink rear body -->
+  <path fill="#d987a2"
+    d="M10 39L16 34H30L34 38V48H28V51H9V45Z"/>
+
+  <!-- Rear body highlights -->
+  <path fill="#f5b0c5"
+    d="M12 39L17 35H29V39H19L14 44H10Z"/>
+
+  <!-- Decorative vents -->
+  <path fill="#a85e80"
+    d="M14 43H23V45H14Z
+       M13 47H23V49H13Z"/>
+
+  <!-- Brown seat -->
+  <path fill="#5a4148"
+    d="M18 28H35L39 31V35H17V31Z"/>
+  <path fill="#8b6165"
+    d="M20 29H34L37 31H19Z"/>
+  <path fill="#bd8b88"
+    d="M20 32H36V34H20Z"/>
+
+  <!-- Footboard -->
+  <path fill="#75445e"
+    d="M29 44H45L49 48V52H28Z"/>
+  <path fill="#d987a2"
+    d="M29 46H44L46 49H30Z"/>
+  <path fill="#f7c4c7"
+    d="M31 48H44V50H31Z"/>
+
+  <!-- Front steering column -->
+  <path fill="#75445e"
+    d="M45 16H50L55 38L59 44L55 48H47L43 42Z"/>
+
+  <!-- Curved front body -->
+  <path fill="#df91ab"
+    d="M46 19H49L53 38L57 44L54 46H48L45 41Z"/>
+
+  <!-- Light pink shine -->
+  <path fill="#ffd0d2"
+    d="M48 22H50L52 39L55 43H52L48 39Z"/>
+
+  <!-- Front mudguard -->
+  <path fill="#b96e8e"
+    d="M46 43L53 40L60 44V49H43V46Z"/>
+  <path fill="#f1aec0"
+    d="M48 44L54 42L58 45V47H46Z"/>
+
+  <!-- Handlebar -->
+  <path fill="#443c43"
+    d="M43 13H55V16H43Z"/>
+  <path fill="#443c43"
+    d="M43 15H39V19H43Z"/>
+
+  <!-- Headlight housing -->
+  <path fill="#996247"
+    d="M49 17H57V26H49Z"/>
+  <path fill="#fff0c9"
+    d="M51 18H56V25H51Z"/>
+  <path fill="#ffe08e"
+    d="M54 19H56V24H54Z"/>
+
+  <!-- Rear indicator -->
+  <path fill="#9e5b50"
+    d="M7 37H12V43H7Z"/>
+  <path fill="#ffe08e"
+    d="M8 38H11V42H8Z"/>
+`
 };
+
+
 
 function makeShopSVG(body, viewBox = "0 0 64 64") {
   return `
@@ -157,7 +306,7 @@ const DEFAULT_PORTRAITS = {
   surprised: "./surprisedshopkeeper.png"
 };
 
-const TALKING_HOVER_ART = new Set(["jersey", "beer", "socks", "tent", "ferrari"]);
+const TALKING_HOVER_ART = new Set(["book", "jewellery", "top", "tent"]);
 
 let activeShop = null;
 
@@ -603,7 +752,7 @@ export function createCottageShop({
       <header>
         <div>
           <h2 id="shop-title">The Little Gift Cottage</h2>
-          <small>SOMETHING JUST FOR HIM</small>
+          <small>SOMETHING JUST FOR HER</small>
         </div>
 
         <div class="wallet"></div>
@@ -664,6 +813,7 @@ export function createCottageShop({
   let previousFocus = null;
   let session = 0;
   let dialogueBusy = false;
+  let pendingPurchaseDialogues = 0;
   let idleTimer = null;
   let idleShown = false;
   let lastActivityAt = 0;
@@ -845,10 +995,6 @@ export function createCottageShop({
     if (!finished) return;
     dialogueBusy = false;
     protectedUntil = 0;
-    if (allPurchased()) {
-      speak("You’ve bought everything! That’s one very lucky boyfriend.", true);
-      protectedUntil = Date.now() + 3000;
-    }
     updateCheckout();
     scheduleIdleCheck();
   }
@@ -1007,6 +1153,7 @@ export function createCottageShop({
     updateCheckout();
 
     const activeSession = session;
+    let purchaseDialogueRunning = false;
 
     try {
       const result = await purchase(gift.id);
@@ -1061,27 +1208,46 @@ export function createCottageShop({
         setPortrait("surprised");
         if (!await speakAndHold("Woah… I wasn’t expecting u to actually buy that!", 2000, purchaseSession)) return;
       }
-      setPortrait("thankYou");
       const boughtRemark =
         gift.purchaseRemark ||
         SHOP_REMARKS[gift.art]?.bought ||
         "Excellent choice!";
-      if (!await speakAndHold(boughtRemark, 2000, purchaseSession)) return;
-      if (!await speakAndHold("Thank you and come again!", 2000, purchaseSession)) return;
-      setPortrait("happy");
-      dialogueBusy = false;
+      selectedId = null;
+      lastRemarkId = null;
+      renderShelves();
       protectedUntil = 0;
       scheduleIdleCheck();
 
-      selectedId = null;
-      lastRemarkId = null;
+      const playPurchaseDialogue = async () => {
+        if (!opened || destroyed || activeSession !== session) return;
+        setPortrait("thankYou");
+        if (!await speakAndHold(boughtRemark, 2000, purchaseSession)) return;
 
-      renderShelves();
+        // Allow the next purchase once the bought message has finished.
+        dialogueBusy = false;
+        updateCheckout();
 
-      if (allPurchased()) {
-        speak("You’ve bought everything! That’s one very lucky boyfriend.", true);
-        protectedUntil = Date.now() + 3000;
-      }
+        if (!await speakAndHold("Thank you and come again!", 2000, purchaseSession)) return;
+        if (opened && !destroyed && activeSession === session) {
+          setPortrait("happy");
+        }
+      };
+      purchaseDialogueRunning = true;
+      pendingPurchaseDialogues += 1;
+      playPurchaseDialogue().then(() => {
+        if (activeSession !== session) return;
+        pendingPurchaseDialogues = Math.max(0, pendingPurchaseDialogues - 1);
+        if (
+          pendingPurchaseDialogues === 0 &&
+          allPurchased() &&
+          opened &&
+          !destroyed &&
+          activeSession === session
+        ) {
+          speak("You’ve bought everything! That’s one very lucky friend.", true);
+          protectedUntil = Date.now() + 3000;
+        }
+      });
     } catch (error) {
       console.error("[Cottage shop]", error);
 
@@ -1093,7 +1259,7 @@ export function createCottageShop({
       }
     } finally {
       busy = false;
-      dialogueBusy = false;
+      if (!purchaseDialogueRunning) dialogueBusy = false;
 
       if (!destroyed && opened) {
         updateCheckout();
@@ -1111,6 +1277,7 @@ export function createCottageShop({
     clearTimers();
     unbindActivityListeners();
     dialogueBusy = false;
+    pendingPurchaseDialogues = 0;
 
     protectedUntil = 0;
     lastRemarkId = null;

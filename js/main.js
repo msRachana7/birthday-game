@@ -11,8 +11,8 @@ import { gifts } from './data/gifts.js';
 
 const introState = {
   lines: [
-    { text: "It’s my boyfriend’s birthday soon… and I don’t have any money…", expression: 'surprise' },
-    { text: 'Will u help me earn some money to buy him his gifts?', expression: 'pleading', requiresYes: true },
+    { text: "It’s my friend’s birthday soon… and I don’t have any money…", expression: 'surprise' },
+    { text: 'Will u help me earn some money to buy her gifts?', expression: 'pleading', requiresYes: true },
     { text: 'Really? Awesome!', expression: 'happy' }
   ],
   currentLineIndex: 0,
@@ -44,13 +44,13 @@ const portraitConfig = {
 const giftArtwork = {
   'diet-coke': 'coke',
   gum: 'gum',
-  'messi-jersey': 'jersey',
-  beer: 'beer',
+  book: 'book',
+  jewellery: 'jewellery',
   'orange-lays': 'chips',
-  'spider-man-socks': 'socks',
+  top: 'top',
   tent: 'tent',
   'pilot-licence': 'licence',
-  ferrari: 'ferrari'
+  scooter: 'scooter'
 };
 
 const shopkeeperPortraits = {
@@ -299,11 +299,11 @@ function startTutorial() {
   document.getElementById('tutorialOverlay')?.remove();
   state.tutorialActive = true;
   const tutorialSteps = [
-    { text: 'That’s the Gift Store! Let’s get him some things he loves.', target: '.cottage.store' },
+    { text: 'That’s the Gift Store! Let’s get her some things she loves.', target: '.cottage.store' },
     { text: 'That’s where we earn money! Play our little games to earn coins.', target: '.cottage.earn' },
     { text: 'Use WASD or the arrow keys to walk. Stand near a cottage and press E to enter.', target: '.world' },
     { text: 'Once you’ve earned some coins, head back to the store and choose a gift to buy.', target: '.cottage.store' },
-    { text: 'When we’ve bought everything, we can go wish him happy birthday!', target: '#birthdayButton' }
+    { text: 'When we’ve bought everything, we can go wish her happy birthday!', target: '#birthdayButton' }
   ];
 
   let index = 0;
@@ -382,7 +382,7 @@ function showLockedBirthdayMessage() {
   document.getElementById('introTouchContinue')?.classList.remove('visible');
   document.getElementById('introYesBtn')?.classList.add('hidden');
   const bubble = document.getElementById('rachanaDialogueBubble');
-  if (bubble) bubble.textContent = 'Meanie how dare you! My boyfriend deserves more gifts';
+  if (bubble) bubble.textContent = 'Meanie how dare you! My friend deserves more gifts';
   setPortraitExpression(portraitConfig.lockedEmotion);
   document.getElementById('introOkayBtn')?.classList.remove('hidden');
 }
@@ -490,7 +490,7 @@ document.getElementById('introYesBtn')?.addEventListener('click', () => {
 });
 
 document.getElementById('introOkayBtn')?.addEventListener('click', () => {
-  // Close the “My boyfriend deserves more gifts” message.
+  // Close the “My friend deserves more gifts” message.
   if (state.birthdayLockedMessageOpen) {
     closeIntroOverlay();
     return;

@@ -1,6 +1,7 @@
 import { state, resetHeldMovement } from '../systems/gameState.js';
 import { saveProgress } from '../systems/saveManager.js';
 import { birthdayCardContent } from '../data/birthdayCard.js';
+import { syncEndingWorldState } from '../world/world.js';
 
 let controller;
 let photoTimer = null;
@@ -14,7 +15,7 @@ const find = (selector) => root()?.querySelector(selector);
 
 const photos = Array.from(
   { length: 7 },
-  (_, i) => `./polaroids/${i + 1}.png`
+  (_, i) => `./polaroids/${i + 1}.png?v=20261021`
 );
 
 const angles = [-8, 6, -5, 9, -7, 4, -3];
@@ -80,6 +81,17 @@ export function hideEnding() {
   endBirthdayScene();
 }
 
+function returnToField() {
+  endBirthdayScene();
+  state.worldTransformationTriggered = false;
+  state.endingDoorVisible = false;
+  state.worldTransitioning = false;
+  state.near = null;
+  state.worldPos = { x: 50, y: 63 };
+  syncEndingWorldState();
+  saveProgress();
+}
+
 export function showEnding() {
   if (root()) root().style.display = 'grid';
 }
@@ -113,12 +125,12 @@ function showPolaroids() {
   root().innerHTML = `
     <section class="bq-memories">
       <p class="bq-memory-title">
-        Before your wish… here's what happened between the two love birds♡
+        Before your wish… here's what happened between the two friends♡
       </p>
 
       <div class="bq-photo-slot"></div>
 
-      <p class="bq-photo-count" aria-live="polite"></p>
+      <!-- <p class="bq-photo-count" aria-live="polite"></p> -->
 
       <button class="bq-photo-next" type="button">
         Next Picture ♡
@@ -132,9 +144,9 @@ function showPolaroids() {
 
   const slot = find('.bq-photo-slot');
   const nextButton = find('.bq-photo-next');
-  const counter = find('.bq-photo-count');
+  // const counter = find('.bq-photo-count');
 
-  listen(find('.bq-back'), 'click', endBirthdayScene);
+  listen(find('.bq-back'), 'click', returnToField);
   listen(nextButton, 'click', advance);
 
   // Clicking the photograph also advances.
@@ -158,7 +170,7 @@ function showPolaroids() {
     index++;
     loading = true;
     nextButton.disabled = true;
-    counter.textContent = 'Loading memory…';
+    // counter.textContent = 'Loading memory…';
 
     const figure = document.createElement('figure');
     figure.className = 'bq-polaroid';
@@ -194,8 +206,8 @@ function showPolaroids() {
         caption.textContent = `Could not load ${index + 1}.png`;
       }
 
-      counter.textContent =
-        `Memory ${index + 1} of ${photos.length}`;
+      // counter.textContent =
+      //   `Memory ${index + 1} of ${photos.length}`;
 
       nextButton.textContent =
         index === photos.length - 1
@@ -449,7 +461,7 @@ function buildCakeScene() {
     </section>
   `;
 
-  listen(find('.bq-back'), 'click', endBirthdayScene);
+  listen(find('.bq-back'), 'click', returnToField);
   listen(find('.bq-card-close'), 'click', closeCard);
 
   const area = find('.bq-cake-area');

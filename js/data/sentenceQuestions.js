@@ -1,54 +1,55 @@
+
 export const sentenceQuestions = [
+  
+{
+  id: 'line-01',
+  sentence: 'What has a face and two hands but no arms or legs? A ______',
+  acceptedAnswers: ['clock']
+},
+
   {
-    id: 'line-01',
-    sentence: 'Me and my cutie on a date, my cutie over here is kinda ______',
-    acceptedAnswers: ['gay']
-  },
-  {
-    id: 'line-02',
-    sentence: 'pinky ______',
-    acceptedAnswers: ['promise']
-  },
+  id: 'line-02',
+  sentence: 'What do you break before you can use it? An ______',
+  acceptedAnswers: ['egg']
+},
   {
     id: 'line-03',
-    sentence: "You're damn ____ da",
-    acceptedAnswers: ['kd']
+    sentence: 'What is always coming but never arrives? ______',
+    acceptedAnswers: ['tomorrow']
   },
   {
     id: 'line-04',
-    sentence: 'Do u wanna play _______?',
-    hint: 'one of the first things u ever asked me',
-    acceptedAnswers: ['truth or dare']
+    sentence: 'What can you catch but never throw? A ______',
+    acceptedAnswers: ['cold', 'a cold']
   },
   {
     id: 'line-05',
-    sentence: 'Bro shut up imma become rachu ______',
-    acceptedAnswers: ['soup']
+    sentence: 'What has a neck but no head? A ______',
+    acceptedAnswers: ['bottle']
   },
   {
     id: 'line-06',
-    sentence: "You're like one _____ da",
-    hint: 's____???',
-    acceptedAnswers: ['sugli']
+    sentence: 'If you throw a red stone into the blue sea, it becomes ______',
+    acceptedAnswers: ['wet']
   },
   {
     id: 'line-07',
-    sentence: 'I ____ you',
-    acceptedAnswers: ['miss']
+    sentence: 'What has teeth but cannot bite? A ______',
+    acceptedAnswers: ['comb']
   },
   {
     id: 'line-08',
-    sentence: "I'm your biggest ____",
-    acceptedAnswers: ['fan']
+    sentence: 'What goes up but never comes down? Your ______',
+    acceptedAnswers: ['age','height']
   },
   {
     id: 'line-09',
-    sentence: "I'm so glad I ___ you",
-    acceptedAnswers: ['met']
+    sentence: 'What has one eye but cannot see? A ______',
+    acceptedAnswers: ['needle']
   },
   {
     id: 'line-10',
-    sentence: 'I love you forever and ______',
-    acceptedAnswers: ['always']
+    sentence: 'What has many keys but cannot open a single door? A ______',
+    acceptedAnswers: ['piano', 'keyboard']
   }
 ];
